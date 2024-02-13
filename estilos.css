@@ -3,6 +3,10 @@
 }
 
 .menu-opcoes a {
-  color: #003366;
+  color: darkblue;
 }
 
+.menu-opcoes ul {
+  display: flex;
+  justify-content: space-between;
+}
