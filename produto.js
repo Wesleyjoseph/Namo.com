@@ -1,0 +1,1 @@
+// interação complefa do usuario no site
