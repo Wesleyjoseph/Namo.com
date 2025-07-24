@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" href="/favicon.png" type="image/png">
-    <title>NAMO.COM</title>
+  <title>NAMO.COM</title>
+  <style>     
   * {
   margin: 0;
   padding: 0;
@@ -15,7 +16,7 @@
   :root {
   --cor-primaria: #2563eb;
   --cor-secundaria: #f59e0b;
-  --cor-destque: #dc2626;
+  --cor-destaque: #dc2626;
   --cor-texto: #1f2937;
   --cor-texto-claro: #6b7280;
   --cor-fundo: #ffffff;
@@ -27,7 +28,341 @@
   --transicao: all 0,3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  
+  body {
+    font-family: 'Inter', -apple-system, BlonkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+  }
+
+  header {
+    background: var(--cor-fundo);
+    box-shadow: var(--sombra-media);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--cor-borda);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    letter-spacing: -0.025em;
+    transition: var(--transicao);
+  }
+
+.logo:hover {
+  transform: scale(1,05);
+}
+
+.highlight {
+  color: var(--cor-destaque);
+}
+
+nav {
+  flex: 1;
+  margin: 0 2rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: var(--transicao);
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgab(37, 99, 235, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+nav a:hover::before {
+  left: 100%;
+}
+
+nav a:hover {
+  color: var(--cor-primaria);
+  background: rgba(37, 99, 235, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-leve);
+}
+
+nav a.ativo {
+   background: var(--cor-primaria);
+   color: white;
+   box-shadow: var(--sombra-media);
+}
+
+nav a.ativo:hover {
+  background: #1d4ed8;
+  color: white;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--cor-primaria);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 80%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: var(--transicao);
+}
+
+.menu-toggle:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--cor-texto);
+  margin: 2px 0;
+  transition: var(--transicao);
+  border-radius: 2px;
+}
+
+.menu-toggle.ativo span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.ativo span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menu-toggle.ativo span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.destaque {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.vitrine {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vitrine h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--cor-texto);
+  font-weight: 700;
+}
+
+.listaroupas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  list-style: none;
+}
+
+
+@media (max-width: 968px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  nav {
+    margin: 0 1rem;
+  }
+
+  nav ul {
+    gap: 0.25rem;
+  }
+
+  nav a {
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+      order: 3;
+    }
+
+    .logo {
+      order: 1;
+      font-size: 1.25rem
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--cor-fundo);
+      box-shadow: var(--sombra-forte);
+      border-top: 1px solid var(--cor-borda);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transicao);
+      order: 4;
+      margin: 0;
+    }
+
+    nav.ativo {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    nav ul {
+      flex-direction: column;
+      padding: 1rem 0;
+      gap: 0;
+    }
+
+    nav li {
+      width: 100%;
+    }
+
+    nav a {
+      padding: 1rem 2rem;
+      border-radius: 0;
+      border-radius: 1px solid var(--cor-borda);
+      text-align: left;
+    }
+
+    nav a:hover {
+      background: var(--cor-fundo-escuro);
+      color: white;
+      transform: none;
+    }
+
+    nav a::after {
+      display: none;
+    }
+
+    nav.ativo li {
+      animation: slideInLeft 0.3s ease forwards;
+    }
+
+    nav.ativo li:nth-child(1) { animation-delay: 0,1s; }
+    nav.ativo li:nth-child()  { animation-delay: 0,2s; }
+    nav.ativo li:nth-child()   { animation-delay: 0,3s; }
+    nav.ativo li:nth-child()  { animation-delay: 0,4s; }
+    nav.ativo li:nth-child()  { animation-delay: 0,5s; }
+    nav.ativo li:nth-child()  { animation-delay: 0,6s; } 
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  nav a:focus, 
+  .menu-toggle:focus {
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 2px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 9999;
+  }
+
+  .loading-bar.ativo {
+    animation: loading 2s ease-in-out;
+  }
+
+  @keyframes loading {
+    0% { transform: translateX(-100%); }
+    50% {transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    nav a {
+      padding: 1rem 1.5rem;
+    }
+
+    nav a:hover {
+      transform: none;
+    }
+  }
+
+  </style>
     
 </head>
 <body>
@@ -40,12 +375,12 @@
 
       <nav>
         <ul>
-          <li><a href="#">Página Inicial</a></li>
+          <li><a href="index.html">Página Inicial</a></li>
           <li><a href="#">Masculino</a></li>
           <li><a href="#">Feminino</a></li>
           <li><a href="#">Infantil</a></li>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
