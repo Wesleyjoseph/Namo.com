@@ -1,5 +1,4 @@
-// Banco de dados dos produtos
-
+// JSON
 const data = [
   {
     id: 1,
@@ -23,7 +22,7 @@ const data = [
   },
   {
     id: 3,
-    img: "../img/   ", // colocar imagens dos produtos 
+    img: "../img/   ",
     nameItem: "Camisa",
     description:
       "Esta camisa è perfeuta para o seu treino",
@@ -64,7 +63,7 @@ const data = [
   
   {
     id:7,
-    img: "../img/     ", // colocar imagem do produto 
+    img: "../img/     ", 
     nameItem: "Camiseta Social Infantil ",
     description: 
     "      ",
@@ -75,7 +74,7 @@ const data = [
   
     {
     id:8,
-    img: "../img/     ", // colocar imagem do produto 
+    img: "../img/     ",
     nameItem: "Blusa Grey Masculina ",
     description: 
     "         ",
@@ -86,7 +85,7 @@ const data = [
  
       {
     id:9,
-    img: "../img/     ", // colocar imagem do produto 
+    img: "../img/     ", 
     nameItem: "Shorts Feminino  ",
     description: 
     "         ",
@@ -97,7 +96,7 @@ const data = [
   
   {
     id:10,
-    img: "../img/     ", // colocar imagem do produto 
+    img: "../img/     ", 
     nameItem: "Terno Masculino",
     description: 
     "         ",

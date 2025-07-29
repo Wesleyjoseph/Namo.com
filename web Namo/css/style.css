@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <title>NAMO.COM</title>
-  <style>     
-  * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,10 +13,10 @@
   --cor-fundo: #ffffff;
   --cor-fundo-escuro: #1f2937;
   --cor-borda: #e5e7eb;
-  --sombra-leve: 0 1px 3px 0 rbga(0, 0, 0, 0.1);
-  --sombra-media: 0 4px 6px -1px rbga(0, 0, 0, 0.1);
-  --sombra-forte: 0 10px 15px -3px rbga(0, 0, 0, 0.1);
-  --transicao: all 0,3s cubic-bezier(0.4, 0, 0.2, 1);
+  --sombra-leve: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --sombra-media: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --sombra-forte: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body {
@@ -108,7 +99,7 @@ nav a::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgab(37, 99, 235, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
   transition: left 0.5s ease;
 }
 
@@ -146,14 +137,16 @@ nav a::after {
   transform: translateX(-50%);
 }
 
+
 nav a:hover::after {
-  width: 80%;
+  display: none;
 }
 
 .menu-toggle {
   display: none;
   flex-direction: column;
   background: none;
+  border: none;
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 6px;
@@ -204,7 +197,7 @@ nav a:hover::after {
   font-weight: 700;
 }
 
-.listaroupas {
+.listaRoupas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -300,12 +293,12 @@ nav a:hover::after {
       animation: slideInLeft 0.3s ease forwards;
     }
 
-    nav.ativo li:nth-child(1) { animation-delay: 0,1s; }
-    nav.ativo li:nth-child()  { animation-delay: 0,2s; }
-    nav.ativo li:nth-child()   { animation-delay: 0,3s; }
-    nav.ativo li:nth-child()  { animation-delay: 0,4s; }
-    nav.ativo li:nth-child()  { animation-delay: 0,5s; }
-    nav.ativo li:nth-child()  { animation-delay: 0,6s; } 
+    nav.ativo li:nth-child(1) { animation-delay: 0.1s; }
+    nav.ativo li:nth-child(2) { animation-delay: 0.2s; }
+    nav.ativo li:nth-child(3) { animation-delay: 0.3s; }
+    nav.ativo li:nth-child(4) { animation-delay: 0.4s; }
+    nav.ativo li:nth-child(5) { animation-delay: 0.5s; }
+    nav.ativo li:nth-child(6) { animation-delay: 0.6s; } 
   }
 
   @keyframes slideInLeft {
@@ -361,72 +354,3 @@ nav a:hover::after {
       transform: none;
     }
   }
-
-  </style>
-    
-</head>
-<body>
-
-  <header>
-    <div class="container">
-      <h1 class="logo">
-        <span class="highlight">NAMO</span>.COM
-      </h1>
-
-      <nav>
-        <ul>
-          <li><a href="index.html">Página Inicial</a></li>
-          <li><a href="#">Masculino</a></li>
-          <li><a href="#">Feminino</a></li>
-          <li><a href="#">Infantil</a></li>
-          <li><a href="sobre.html">Sobre nós</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="destaque">
-      <div class="container">
-        <div class="vitrine">
-          <ul class="listaRoupas" id="listaPrincipal">
-          
-            
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <aside class="secaoDireita">
-      <div class="CarrinhoDeCompras">
-        <form>
-          <label for="input">Busca:</label>
-          <input type="text" placeholder="O que está procurando..." id="input" />
-          <button type="submit" id="searchButton">Pesquisar</button>
-        </form>
-      </div>
-
-      <div class="carrinho">
-        <h3 class="tituloCarrinho">Carrinho de Compras</h3>
-        <ul class="listaSelecionados" id="listaCompras">
-          <li class="ComprasCarrinho">
-            <button data-btn="CarrinhoDeCompras">Adicionar</button>
-            <h3 id="carrinhoVazio">Carrinho Vazio</h3>
-            <small id="small">adicione itens</small>
-          </li>
-        </ul>
-      </div>
-    </aside>
-  </main>
-
-  <footer>
-    <p>&copy;2025 Namo.com. Todos os direitos reservados.</p>
-    <p>Redes Sociais: <a href="#">Instagram</a></p>
-  </footer>
-
-  <script src="./js/database.js"></script>
-  <script src="./js/index.js"></script>
-  
-</body>
-</html>

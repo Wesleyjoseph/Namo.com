@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/web Namo/css/style.css" />
+  
+  <title>NAMO.COM</title>   
+
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 class="logo">
+        <span class="highlight">NAMO</span>.COM
+      </h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="masculino.html">Masculino</a></li>
+          <li><a href="feminino.html">Feminino</a></li>
+          <li><a href="infantil.html">Infantil</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="destaque">
+      <div class="container">
+        <div class="vitrine">
+          <ul class="listaRoupas" id="listaPrincipal">
+          
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <aside class="secaoDireita">
+      <div class="CarrinhoDeCompras">
+        <form>
+          <label for="input">Busca:</label>
+          <input type="text" placeholder="O que está procurando..." id="input" />
+          <button type="submit" id="searchButton">Pesquisar</button>
+        </form>
+      </div>
+
+      <div class="carrinho">
+        <h3 class="tituloCarrinho">Carrinho de Compras</h3>
+        <ul class="listaSelecionados" id="listaCompras">
+          <li class="ComprasCarrinho">
+            <button data-btn="CarrinhoDeCompras">Adicionar</button>
+            <h3 id="carrinhoVazio">Carrinho Vazio</h3>
+            <small id="small">adicione itens</small>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy;2025 Namo.com. Todos os direitos reservados.</p>
+    <p>Redes Sociais: <a href="https://www.instagram.com/namomodas?igsh=MTBxYzcydXY3NWg4aQ%3D%3D&utm_source=qr">Instagram</a></p>
+  </footer>
+
+  <script src="./js/database.js"></script>
+  <script src="./js/index.js"></script>
+  
+</body>
+</html>
